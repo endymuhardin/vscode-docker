@@ -61,3 +61,8 @@ docker compose -f compose/docker-compose.<variant>.yml down
 ```
 
 Replace `<variant>` with: `java`, `python`, `javascript`, or `full`.
+
+
+# References #
+
+* [Prompts for creating this project](https://chatgpt.com/share/680100a3-6488-800a-a607-41f225fd17da)

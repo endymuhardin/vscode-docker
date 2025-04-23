@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  code-server-full:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.full
+    ports:
+      - "8777:8080"
+    volumes:
+      - .:/home/coder/project
+    environment:
+      - PASSWORD=secret
+    container_name: vscode-fullstack-dev

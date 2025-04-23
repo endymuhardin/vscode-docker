@@ -1,29 +1,63 @@
-# VS Code in Docker with code-server
+# VS Code in Docker – Multi-Language Dev Environment
 
-This runs a full VS Code experience in your browser using Docker Compose and code-server.
+Run VS Code entirely in your browser with support for Java, Python, JavaScript, or all combined.
 
-## 🚀 Run
+---
+
+## 🔧 How to Use
+
+### 🚀 Run Java Dev Environment
 
 ```bash
-docker compose up --build -d
+docker compose -f compose/docker-compose.java.yml build
+docker compose -f compose/docker-compose.java.yml up -d
 ```
 
-Visit [http://localhost:8080](http://localhost:8080) in your browser.
+Visit: http://localhost:8443  
+Password: `secret`
 
-Login with password: `secret123` (change it in `docker-compose.yml` or `config.yaml`).
+---
 
-## 🧩 Pre-installed Extensions
+### 🐍 Run Python Dev Environment
 
-- Java Pack (`vscjava.vscode-java-pack`)
-- Thunder Client (`rangav.vscode-thunder-client`)
-- Cline AI Bot (`saoudrizwan.claude-dev`)
-- Roo Code (`roocode.roocode`)
+```bash
+docker compose -f compose/docker-compose.python.yml build
+docker compose -f compose/docker-compose.python.yml up -d
+```
 
-## 🛠 Customize
+Visit: http://localhost:8555  
+Password: `secret`
 
-- Place your code in this folder (it's mounted as `/home/coder/project`).
-- Use the Extensions panel to add more extensions.
+---
 
-## 🔒 Secure It
+### 🟨 Run JavaScript Dev Environment
 
-You can hash the password or configure HTTPS. See: [code-server docs](https://coder.com/docs/code-server/latest)
+```bash
+docker compose -f compose/docker-compose.javascript.yml build
+docker compose -f compose/docker-compose.javascript.yml up -d
+```
+
+Visit: http://localhost:8666  
+Password: `secret`
+
+---
+
+### 💥 Run Full-Stack Dev Environment
+
+```bash
+docker compose -f compose/docker-compose.full.yml build
+docker compose -f compose/docker-compose.full.yml up -d
+```
+
+Visit: http://localhost:8777  
+Password: `secret`
+
+---
+
+## 🛑 Stop Environment
+
+```bash
+docker compose -f compose/docker-compose.<variant>.yml down
+```
+
+Replace `<variant>` with: `java`, `python`, `javascript`, or `full`.

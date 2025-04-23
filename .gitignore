@@ -1,17 +1,3 @@
-# VS Code
 .vscode/
-
-# code-server config
-config/code-server/config.yaml
-
-# Node / Java / Python
 node_modules/
-*.log
-*.class
-__pycache__/
-
-# Docker
-*.env
-*.pid
-*.tar
-*.zip
+.env

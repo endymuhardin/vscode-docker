@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  code-server-python:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.python
+    ports:
+      - "8555:8080"
+    volumes:
+      - .:/home/coder/project
+    environment:
+      - PASSWORD=secret
+    container_name: vscode-python-dev
